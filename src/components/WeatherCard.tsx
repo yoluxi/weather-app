@@ -46,11 +46,6 @@ const Temperature = styled.div`
   margin: 10px 0;
 `;
 
-const WeatherInfo = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-`;
 
 const WeatherText = styled.div`
   text-align: center;
