@@ -56,6 +56,7 @@ const customStyles = {
         boxShadow: 'none',
         '&:hover': {
             border: '1px solid #1E90FF',
+            cursor: 'text'
         }
     }),
     option: (provided: any, state: any) => ({
@@ -63,8 +64,13 @@ const customStyles = {
         backgroundColor: state.isSelected ? '#1E90FF' : state.isFocused ? 'rgba(30, 144, 255, 0.1)' : null,
         '&:hover': {
             backgroundColor: state.isSelected ? '#1E90FF' : 'rgba(30, 144, 255, 0.1)',
+            cursor: 'pointer'
         }
     }),
+    dropdownIndicator: (provided: any) => ({
+        ...provided,
+        cursor: 'pointer'
+    })
 };
 
 const CitySelector: React.FC<CitySelectorProps> = ({ currentCity, onCityChange }) => {
