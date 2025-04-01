@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { WeatherData } from './types';
 
-const API_KEY = '';
+const API_KEY = process.env.API_KEY || '';
 
 export const fetchWeatherData = async (currentCity: string): Promise<WeatherData> => {
   try {

@@ -1,104 +1,101 @@
-# 城市天气预报应用
+# City Weather Forecast Application
 
-这是一个使用 React 和 TypeScript 开发的单页应用，用于显示中国各主要城市未来七天的天气预报信息。应用通过和风天气 API 获取实时天气数据，并以美观的卡片形式展示。
+A single-page application developed with React and TypeScript that displays a 7-day weather forecast for major cities in China. The application fetches real-time weather data through the QWeather API and presents it in an aesthetically pleasing card format.
 
-## 功能特点
 
-- 显示未来七天的天气预报
-- 支持搜索和选择中国主要城市
-- 根据当前时间自动切换白天/夜间天气图标
-- 展示每日温度范围、天气状况、湿度、风向和风力等信息
-- 使用和风天气图标直观展示天气状况
-- 响应式设计，适配不同屏幕尺寸
-- 完整的无障碍功能支持
-- 美观的 UI 设计，包含卡片悬停效果和平滑过渡动画
 
-## 技术栈
+## Features
+
+- Displays a 7-day weather forecast
+- Supports searching and selecting major Chinese cities
+- Automatically switches between day/night weather icons based on current time
+- Shows daily temperature range, weather conditions, humidity, wind direction, and wind force
+- Uses QWeather icons to visually represent weather conditions
+- Responsive design that adapts to different screen sizes
+- Complete accessibility support
+- Beautiful UI design with card hover effects and smooth transition animations
+
+## Tech Stack
 
 - React 18
 - TypeScript
-- styled-components (CSS-in-JS 解决方案)
-- react-select (可搜索的下拉选择器)
-- Axios (HTTP 请求库)
-- 和风天气 API 和图标库
+- styled-components (CSS-in-JS solution)
+- react-select (searchable dropdown selector)
+- Axios (HTTP request library)
+- QWeather API and icon library
 
-## 安装与运行
+## Installation and Setup
 
-1. 克隆项目到本地
+1. Clone the repository
 
 ```bash
 git clone https://github.com/yoluxi/weather-app.git
 cd weather
 ```
 
-2. 安装依赖
+2. Install dependencies
 
 ```bash
 npm install
 ```
 
-3. 配置 API 密钥
+3. Configure API Key
 
-在 `src/api.ts` 文件中，将 `API_KEY` 替换为你从[和风天气开发平台](https://dev.qweather.com/)获取的 API 密钥。
+In the `src/api.ts` file, replace `API_KEY` with your API key obtained from the [QWeather Developer Platform](https://dev.qweather.com/).
 
 ```typescript
-const API_KEY = '你的和风天气API密钥';
+const API_KEY = 'your-qweather-api-key';
 ```
 
-4. 启动开发服务器
+4. Start the development server
 
 ```bash
 npm start
 ```
 
-应用将在 [http://localhost:3000](http://localhost:3000) 运行。
+The application will run at [http://localhost:3000](http://localhost:3000).
 
-## 项目结构
+## Project Structure
 
 ```
 /public
-  - index.html (包含和风天气图标库引用)
+  - index.html (includes QWeather icon library reference)
   - favicon.ico
   - manifest.json
 /src
   /components
-    - WeatherCard.tsx (天气卡片组件)
-    - CitySelector.tsx (城市选择组件)
-    - SkeletonCard.tsx (加载骨架屏组件)
-    - ErrorBoundary.tsx (错误边界组件)
-  - App.tsx (主应用组件)
-  - api.ts (API 服务)
-  - types.ts (TypeScript 类型定义)
-  - index.tsx (应用入口)
-  - index.css (全局样式)
+    - WeatherCard.tsx (Weather card component)
+    - CitySelector.tsx (City selection component)
+    - SkeletonCard.tsx (Loading skeleton component)
+    - ErrorBoundary.tsx (Error boundary component)
+  - App.tsx (Main application component)
+  - api.ts (API service)
+  - types.ts (TypeScript type definitions)
+  - index.tsx (Application entry)
+  - index.css (Global styles)
 ```
 
-## 使用说明
+## Usage Guide
 
-1. 打开应用后，默认显示上海的天气预报
-2. 使用顶部的城市选择器搜索并选择其他城市
-3. 应用会自动获取并显示所选城市的天气预报
-4. 每个天气卡片显示一天的天气信息，包括日期、天气图标、温度范围、天气状况、湿度、风向和风力
-5. 天气图标会根据当前时间自动切换为白天或夜间图标
+1. When you open the application, Shanghai's weather forecast is displayed by default
+2. Use the city selector at the top to search for and select other cities
+3. The application will automatically fetch and display the weather forecast for the selected city
+4. Each weather card shows one day's weather information, including date, weather icon, temperature range, weather conditions, humidity, wind direction, and wind force
+5. Weather icons automatically switch between day and night versions based on the current time
 
-
-## 构建生产版本
+## Building for Production
 
 ```bash
 npm run build
 ```
 
-构建后的文件将生成在 `build` 目录中，可以部署到任何静态文件服务器。
 
-## 注意事项
+## Notes
 
-- 和风天气 API 免费版每天有调用次数限制，请合理使用
-- 本应用使用和风天气图标库，需要保持网络连接以正确加载图标
-- 为提高性能，应用实现了数据缓存，同一城市的天气数据在短时间内不会重复请求
+- The free version of QWeather API has daily call limits, please use it reasonably
+- This application uses the QWeather icon library, which requires an internet connection to load correctly
 
 
-
-## 许可证
+## License
 
 MIT
-```
